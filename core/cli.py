@@ -33,9 +33,10 @@ def run_cli():
     print_banner()
     print(Fore.CYAN + f"[ {sys.platform} ]" + Style.RESET_ALL)
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-s", "-S", "--scan", "--SCAN")
-    parser.add_argument("-d", "-D")
+    parser = argparse.ArgumentParser(description="Toolkit de Footprinting e Reconhecimento")
+    parser.add_argument("-s", "--scan", help="Host a ser escaneado (ex: scanme.nmap.org)", type=str)
+    parser.add_argument("-d", "--dirscan", help="Ativa a enumeração de subdiretórios", action="store_true")
+
     args = parser.parse_args()
     
     if args.__dict__.get("scan") is not None:   # [-S]CAN [-s] [--scan] [--SCAN]
