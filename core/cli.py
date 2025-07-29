@@ -29,7 +29,7 @@ def print_banner():
 def run_cli():
 
     start = time.time()
-    os.system("cls" if os.name == "nt" else "clear")    
+    #os.system("cls" if os.name == "nt" else "clear")    
     print_banner()
     print(Fore.CYAN + f"[ {sys.platform} ]" + Style.RESET_ALL)
 
@@ -62,8 +62,9 @@ def run_cli():
             print( Fore.RED +  "PING FALHOU" + Style.RESET_ALL)
     else: print( Fore.RED +  "SCAN" + Style.RESET_ALL)
 
-    if args.__dict__.get("d") is not None: # SUB [-D]IRETORIOS [-d] 
-        if ping(target_ip):
+    if args.dirscan is not None: # SUB [-D]IRETORIOS [-d] 
+        target_ip,target_dns = getHost(scan_target) #########################
+        if ping(target_ip, os.name):
             print( Fore.GREEN +  "TESTANDO SUBDIRETORIOS" + Style.RESET_ALL)
             dominios = testSubDomain(host_dns=target_dns)
             if len( dominios ) > 0:
