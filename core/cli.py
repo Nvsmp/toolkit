@@ -6,12 +6,6 @@ from utils.ip_dns import *
 from tools.sub_domains import testSubDomain
 from tools.port_scanner import scan_port, banner_grabbing
 
-#  __  __       _        _ _    _ _   
-# |  \/  | __ _| |_ _ __(_) | _(_) |_ 
-# | |\/| |/ _` | __| '__| | |/ / | __|
-# | |  | | (_| | |_| |  | |   <| | |_ 
-# |_|  |_|\__,_|\__|_|  |_|_|\_\_|\__|
-    
 def print_banner():
     init(autoreset=True)
     print(Fore.GREEN + r"""
@@ -23,7 +17,6 @@ def print_banner():
    |_|   \___/   \___/  |______|        |_|\_\ |_|  |_|  
                       by Bottom Text
 ==========================================================
-          
     """ + Style.RESET_ALL)
 
 def run_cli():
@@ -52,10 +45,13 @@ def run_cli():
             portas = scan_port(host=target_ip)
             print( Fore.GREEN+ f"PORTAS ABERTAS : {portas}\n" + Style.RESET_ALL)
             banners = banner_grabbing(ports=portas, host=target_ip) 
+            print(Fore.GREEN + "==========================================================" + Style.RESET_ALL)
             #print(banners)
             if len(banners) > 0:
+                print(Fore.LIGHTMAGENTA_EX + "==========================================================" + Style.RESET_ALL)
                 for i in banners:
                     print( Fore.LIGHTMAGENTA_EX + i + Style.RESET_ALL )
+                print(Fore.LIGHTMAGENTA_EX + "==========================================================" + Style.RESET_ALL)
             else:
                 print( Fore.RED +  "BANNERS FALHARAM" + Style.RESET_ALL)    
         else:
@@ -65,6 +61,7 @@ def run_cli():
     if args.dirscan is not None: # SUB [-D]IRETORIOS [-d] 
         target_ip,target_dns = getHost(scan_target) #########################
         if ping(target_ip, os.name):
+            print(Fore.GREEN + "==========================================================" + Style.RESET_ALL)
             print( Fore.GREEN +  "TESTANDO SUBDIRETORIOS" + Style.RESET_ALL)
             dominios = testSubDomain(host_dns=target_dns)
             if len( dominios ) > 0:
@@ -72,6 +69,7 @@ def run_cli():
                     print( Fore.LIGHTGREEN_EX +  f"SUBDIRETORIOS ENCONTRADOS : {d}" + Style.RESET_ALL)
             else: 
                 print( Fore.RED +  "SUBDIRETORIOS FALHARAM" + Style.RESET_ALL)
+            print(Fore.GREEN + "==========================================================" + Style.RESET_ALL)
         else:
             print( Fore.RED +  "PING FALHOU" + Style.RESET_ALL)
     else: print( Fore.RED +  "SUB DIRETORIOS" + Style.RESET_ALL)
