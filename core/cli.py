@@ -58,7 +58,7 @@ def run_cli():
             print( Fore.RED +  "PING FALHOU" + Style.RESET_ALL)
     else: print( Fore.RED +  "SCAN" + Style.RESET_ALL)
 
-    if args.dirscan is not None: # SUB [-D]IRETORIOS [-d] 
+    if args.dirscan: # SUB [-D]IRETORIOS [-d] 
         target_ip,target_dns = getHost(scan_target) #########################
         if ping(target_ip, os.name):
             print(Fore.GREEN + "==========================================================" + Style.RESET_ALL)
@@ -66,7 +66,7 @@ def run_cli():
             dominios = testSubDomain(host_dns=target_dns)
             if len( dominios ) > 0:
                 for d in dominios:
-                    print( Fore.LIGHTGREEN_EX +  f"SUBDIRETORIOS ENCONTRADOS : {d}" + Style.RESET_ALL)
+                    print( Fore.LIGHTGREEN_EX +  f"SUBDIRETORIO ENCONTRADO : {d}" + Style.RESET_ALL)
             else: 
                 print( Fore.RED +  "SUBDIRETORIOS FALHARAM" + Style.RESET_ALL)
             print(Fore.GREEN + "==========================================================" + Style.RESET_ALL)

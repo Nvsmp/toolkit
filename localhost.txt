@@ -1,0 +1,49 @@
+
+  _____                  _               _  __     _____  
+ |_   _|  ___     ___   | |             | |/ /  _ |_   _| 
+   | |   / _ \   / _ \  | |      _____  | ' /  (_)  | |   
+   | |  | | | | | | | | | |     |____ | |  <    _   | | 
+   | |  | |_| | | |_| | | |____         | . \  | |  | |  
+   |_|   \___/   \___/  |______|        |_|\_\ |_|  |_|  
+                      by Bottom Text
+==========================================================
+    
+[ linux ]
+SCAN - localhost
+RESOLVENDO localhost
+[ IP ] 127.0.0.1
+PING OK
+TESTANDO PORTAS
+PORTAS ABERTAS : [80, 37087]
+
+==========================================================
+==========================================================
+[ 80 ] 
+[ HTTP/1.1 400 Bad Request
+Date: Fri, 01 Aug 2025 17:47:50 GMT
+Server: Apache/2.4.25 (Debian)
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+ ]
+[ 37087 ] 
+[ HTTP/1.1 400 Bad Request
+Content-Type: text/plain; charset=utf-8
+Connection: close
+
+400 Bad Request ]
+==========================================================
+==========================================================
+TESTANDO SUBDIRETORIOS
+SUBDIRETORIOS ENCONTRADOS : index.phps
+SUBDIRETORIOS ENCONTRADOS : images.phps
+SUBDIRETORIOS ENCONTRADOS : teste.phps
+SUBDIRETORIOS ENCONTRADOS : oie.phps
+SUBDIRETORIOS ENCONTRADOS : bbrv.phps
+SUBDIRETORIOS ENCONTRADOS : www.phps
+SUBDIRETORIOS ENCONTRADOS : shared.phps
+SUBDIRETORIOS ENCONTRADOS : admin.phps
+==========================================================
+TEMPO GASTO : 16.84 s
+
+bottom text
